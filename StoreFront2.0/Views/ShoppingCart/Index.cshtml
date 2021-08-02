@@ -1,0 +1,71 @@
+﻿@model Dictionary<int, StoreFront2._0.Models.CartItemViewModel>
+@{
+    ViewBag.Title = "Shopping Cart";
+    decimal? cartTotal = 0;
+    int totalCountOfItems = 0;
+}
+
+<p class="text-right">
+    @Html.ActionLink("Continue Shopping", "Index", "VideoGames", null, new { @class = "btn btn-primary" })
+</p>
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+@if (Model.Count == 0)
+{
+    <p class="alert alert-warning">
+        @ViewBag.Message
+    </p>
+}
+else
+{
+
+    <table class="table">
+        <tr>
+            <th>Game Cover</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Content/images/t_@item.Value.Game.IMG" alt="@item.Value.Game.GameTitle"/>
+                </td>
+                <td>@item.Value.Game.GameTitle</td>
+                <td>@string.Format($"{item.Value.Game.Price:c}")</td>
+                <td>
+                    @using (Html.BeginForm("UpdateCart", "ShoppingCart", FormMethod.Post))
+                    {
+                        @Html.Hidden("gameID", item.Key)
+                        @Html.TextBox("quantity", item.Value.Quantity, new { @class = "form-control", @style = "max-width: 50px; display: inline" })
+                        <input type="submit" value="Update Quantity" class="btn btn-info"/>
+                    }
+                    @{ 
+                        totalCountOfItems += item.Value.Quantity;
+                    }
+                </td>
+                <td>
+                    @{ 
+                        decimal? lineTotal = item.Value.Game.Price * item.Value.Quantity;
+                        cartTotal += lineTotal;
+                    }
+                    @string.Format($"{lineTotal:c}")
+                </td>
+                <td>
+                    @Html.ActionLink("Remove from Cart", "RemoveFromCart", new { id = item.Key })
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p class="alert alert-success text-center">
+        You have @totalCountOfItems item@(totalCountOfItems == 1 ? "" : "s") in your cart.
+        <br/>
+        Subtotal: @string.Format($"{cartTotal:c}")
+    </p>
+}

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1433
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreFront2.0", "StoreFront2.0\StoreFront2.0.csproj", "{6076AEBD-B67C-402E-A41F-275816B4C765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreFront.UI.MVC", "StoreFront2.0\StoreFront.UI.MVC.csproj", "{6076AEBD-B67C-402E-A41F-275816B4C765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreFront.DATA.EF", "StoreFront.DATA.EF\StoreFront.DATA.EF.csproj", "{0E3277F0-A200-4369-938C-1625819FB0E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6076AEBD-B67C-402E-A41F-275816B4C765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6076AEBD-B67C-402E-A41F-275816B4C765}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6076AEBD-B67C-402E-A41F-275816B4C765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3277F0-A200-4369-938C-1625819FB0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3277F0-A200-4369-938C-1625819FB0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3277F0-A200-4369-938C-1625819FB0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3277F0-A200-4369-938C-1625819FB0E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
