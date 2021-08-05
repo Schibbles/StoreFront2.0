@@ -52,7 +52,8 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IMG)
+                @*@Html.DisplayFor(modelItem => item.IMG)*@
+                <img src="~/Content/images/t_@item.IMG" alt="Game cover" title="@item.GameTitle"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GameTitle)
@@ -73,9 +74,14 @@
                 @Html.DisplayFor(modelItem => item.StockStatus.StockStatus1)
             </td>
             <td>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GameID })@:|
+                }
                 @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.GameID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.GameID })
+                @Html.ActionLink("Details", "Details", new { id = item.GameID })
+
             </td>
         </tr>
     }
