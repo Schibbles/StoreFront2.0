@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h4>new arrivals</h4>
-                    <h2>sixteen products</h2>
+                    <h4>the games</h4>
+                    <h2>our products</h2>
                 </div>
             </div>
         </div>
@@ -78,8 +78,9 @@
                 {
 
                     @Html.ActionLink("Delete", "Delete", new { id = item.GameID })@:|
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) @:|
                 }
-                @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) |
+
                 @Html.ActionLink("Details", "Details", new { id = item.GameID })
 
             </td>

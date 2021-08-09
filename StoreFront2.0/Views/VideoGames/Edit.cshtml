@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "VideoGames", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -15,7 +15,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.GameID)
-
+        @Html.HiddenFor(model => model.IMG)
         <div class="form-group">
             @Html.LabelFor(model => model.GameTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -71,7 +71,7 @@
                 <img src="~/Content/images/@Model.IMG" alt="@Model.GameTitle" style="max-width: 100px" />
                 <hr/>
                 <input type="file" name="gameCover"/>
-                @Html.ValidationMessageFor(model => model.IMG, "", new { @class = "text-danger" })
+                @*@Html.ValidationMessageFor(model => model.IMG, "", new { @class = "text-danger" })*@
             </div>
         </div>
 

@@ -39,7 +39,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IMG)
+            @*@Html.DisplayFor(model => model.IMG)*@
+
+            <img src="~/Content/images/@Model.IMG" alt="@Model.GameTitle" />
         </dd>
 
         <dt>
@@ -67,6 +69,16 @@
         </dd>
 
     </dl>
+    @* Add to cart *@
+    <p>
+        @using (Html.BeginForm("AddToCart", "VideoGames", new { @gameId = Model.GameID }, FormMethod.Post, new { @class = "text-center" }))
+        {
+            @Html.HiddenFor(x => x.GameID)
+            <span class="label">Quantity: </span>
+            @Html.TextBox("Qty", 1, new { @class = "form-control", @style = "max-width: 50px; display: inline;" })
+            <input type="submit" value="Add to Cart" class="btn btn-primary" name="qty" />
+        }
+    </p>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.GameID }) |

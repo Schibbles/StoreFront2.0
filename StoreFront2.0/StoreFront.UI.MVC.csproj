@@ -91,15 +91,30 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,7 +182,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FiltersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
@@ -202,17 +219,21 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\slick.svg" />
     <Content Include="Content\images\about-heading.jpg" />
+    <Content Include="Content\images\best-final-fantasy-games.original.jpg" />
     <Content Include="Content\images\client-01.png" />
     <Content Include="Content\images\contact-heading.jpg" />
     <Content Include="Content\images\feature-image.jpg" />
     <Content Include="Content\images\FinalFantasyX-2.jpg" />
     <Content Include="Content\images\FinalFantasyX.jpg" />
     <Content Include="Content\images\FinalFantasyXII.jpg" />
+    <Content Include="Content\images\GameFreak.jpg" />
+    <Content Include="Content\images\KingdomH.jfif" />
     <Content Include="Content\images\KingdomHearts.jpg" />
     <Content Include="Content\images\KingdomHearts2.jpg" />
     <Content Include="Content\images\KingdomHeartsBirthbySleep.jpg" />
     <Content Include="Content\images\KingdomHeartsChainofMemories.jpg" />
     <Content Include="Content\images\more-info.jpg" />
+    <Content Include="Content\images\pokemon.jfif" />
     <Content Include="Content\images\PokemonBlackandWhite.jpg" />
     <Content Include="Content\images\PokemonCrystal.jpg" />
     <Content Include="Content\images\PokemonDiamondandPearl.jpg" />
@@ -236,6 +257,7 @@
     <Content Include="Content\images\slide_01.jpg" />
     <Content Include="Content\images\slide_02.jpg" />
     <Content Include="Content\images\slide_03.jpg" />
+    <Content Include="Content\images\SquareEnix.jpg" />
     <Content Include="Content\images\team_01.jpg" />
     <Content Include="Content\images\team_02.jpg" />
     <Content Include="Content\images\team_03.jpg" />
@@ -261,6 +283,7 @@
     <Content Include="Content\images\t_PokemonSwordandShield.jpg" />
     <Content Include="Content\images\t_PokemonXandY.jpg" />
     <Content Include="Content\images\t_PokemonYellow.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -437,6 +460,7 @@
     <Content Include="Views\VideoGames\Edit.cshtml" />
     <Content Include="Views\VideoGames\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Filters\GamesGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
